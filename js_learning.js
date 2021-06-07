@@ -1,11 +1,8 @@
-/**
+/*************************************
  * algo 1
  * lo-hi game
  * 
- * 
- * 
- * 
- */
+ *************************************/
 
 const button01 = document.querySelector("#button-algo-01");
 const input01 = document.querySelector("#input-algo-01");
@@ -47,31 +44,29 @@ function output_function_01(guessNumber) {
  * @param {*} event 
  */
 function btn01_onClick(event) {
-    // prevent page redirection when user click on button.
+    
     event.preventDefault();
-    // testing the user input
+    
     output01.textContent = output_function_01(input01.value);
+
 }
 
 // when user click on button ...
 button01.addEventListener('click', btn01_onClick);
 
 
-/**
+/*************************************
  * algo 2
  * sum of all positive int below a number provided by user
  * 
- * 
- * 
- * 
- */
+ *************************************/
 
 const button02 = document.querySelector("#button-algo-02");
 const input02 = document.querySelector("#input-algo-02");
 const output02 = document.querySelector("#output-algo-02");
 
 /**
- * return the sum of all int below argument
+ * return the sum of all int below argument value
  * @param {*} number 
  * @returns 
  */
@@ -103,14 +98,13 @@ function printSum(number) {
 }
 
 /**
- * return output phrase depending on user input
+ * return output phrase depends on user input
  * @param {*} number 
  * @returns 
  */
 function output_function_02(number) {
 
     intNumber = parseInt(number);
-    console.log(intNumber);
 
     if(isNaN(intNumber)) {
         return "Please, provide a valid value";
@@ -129,22 +123,23 @@ function output_function_02(number) {
  * @param {*} event 
  */
 function btn02_onClick(event) {
+
     event.preventDefault();
+
     output02.textContent = output_function_02(input02.value);
+
 }
 
+// when user click on the button...
 button02.addEventListener('click', btn02_onClick);
 
-/**
+
+/*************************************
  * algo 03
- * Ask user to enter 20 number
- * When user provided 20 number, print the higher number
+ * Ask user to enter 10 number
+ * When done, print the greatest number
  * 
- * 
- * 
- * 
- * 
- */
+ *************************************/
 
 const input03 = document.querySelector('#input-algo-03');
 const button03 = document.querySelector('#button-algo-03');
@@ -175,7 +170,7 @@ function output_function_03(number) {
  * handle event when user click on button
  * @param {*} event 
  */
-function click_function_03(event) {
+function btn03_onClick(event) {
 
     event.preventDefault();
 
@@ -185,34 +180,41 @@ function click_function_03(event) {
     let li_text = document.createTextNode(output_function_03(input03.value));
     li_tag.appendChild(li_text);
 
+    // depending of user input, add number to array and list, or print fails message
     if(!isNaN(intNumber)) {
+
         list03.appendChild(li_tag);
         numberArray03.push(intNumber);
         ++numberNumber03;
+
     } else {
+
         output03.textContent = output_function_03(input03.value);
+
     }
 
+    // after 10 number provided, clear <li> element
     if(numberNumber03 > numberCount03) {
+
         output03.textContent = "You entered 10 number. Your highest number is : " + Math.max(...numberArray03);
         button03.parentElement.removeChild(button03);
         input03.parentElement.removeChild(input03);
+
     }
 
 }
 
-button03.addEventListener('click', click_function_03);
+// when the user click on button...
+button03.addEventListener('click', btn03_onClick);
 
-/**
- * algo 5
- * The user provide 5 numbers
- * After user input, the list of number will be sorted ascending
+
+/**************************************
+ * algo 4
+ * The user provide list numbers
+ * When user enter 0, numbers prompt end.
+ * Then the list of number will be sorted ascending
  * 
- * 
- * 
- * 
- * 
- */
+ **************************************/
 
 const input04 = document.querySelector('#input-algo-04');
 const button04 = document.querySelector('#button-algo-04');
@@ -235,7 +237,12 @@ function output_function_04(number) {
     }
     return intNumber;
 }
- 
+
+ /**
+  * sort array in ascending order
+  * add an <li> element in targeted <ul> for each element in the list
+  * @param {*} array 
+  */
 function printListAsc(array) {
 
     // sort array in ascending order
@@ -249,13 +256,14 @@ function printListAsc(array) {
         li_tag.appendChild(li_text);
         list04.appendChild(li_tag);
     });
+
 }
 
  /**
   * handle event when user click on button
   * @param {*} event 
   */
-function click_function_04(event) {
+function btn04_onClick(event) {
 
     event.preventDefault();
 
@@ -265,82 +273,118 @@ function click_function_04(event) {
     let li_text = document.createTextNode(output_function_04(input04.value));
     li_tag.appendChild(li_text);
 
+    // depending on user input, add number to list and array, print fail message otherwise
     if(!isNaN(intNumber)) {
+
         list04.appendChild(li_tag);
         numberArray.push(intNumber);
         console.log(numberArray);
         console.log(numberArray.sort(function(a, b) {
             return a - b;
         }));
+
     } else {
+
         output04.textContent = output_function_04(input04.value);
+
     }
 
+    // when the user input 0 value
     if(parseInt(input04.value) == 0) {
+
         output04.textContent = "You entered value 0, now sorting the list in ascending order.";
-        list04.querySelectorAll('*').forEach(n => n.remove());
+        list04.querySelectorAll('*').forEach(value => value.remove());
         printListAsc(numberArray);
         button04.parentElement.removeChild(button04);
         input04.parentElement.removeChild(input04);
+
     }
 
 }
 
-button04.addEventListener('click', click_function_04);
+// when the user click on button...
+button04.addEventListener('click', btn04_onClick);
 
-/**
+/***************************************
  * algo 05
  * When user input text in field, background div will change color
  * 
- */
+ ***************************************/
 
 const input05 = document.querySelector('#input-algo-05');
 const div05 = document.getElementById('div-algo-05');
 
+/**
+ * change background color depending on the string length
+ * @param {*} event 
+ */
 function input_function_05(event) {
-    let colorModifier = (input05.value.length < 10) ? Math.floor((input05.value.length * 254) / 10) : 254;
+    let colorModifier = 255 - ((input05.value.length < 10) ? Math.floor((input05.value.length * 255) / 10) : 255);
     console.log(colorModifier);
     div05.style.backgroundColor = `rgb(255, ${colorModifier}, 255)`;
 }
 
+// when the user change input...
 input05.addEventListener('input', input_function_05);
 
-/**
+/***************************************
  * algo 06
  * User enter a number.
- * This Script will test id provided number is Prime or not.
+ * This Script will test if provided number is Prime or not.
  * 
- * 
- */
+ **************************************/
 
 const input06 = document.querySelector('#input-algo-06');
 const button06 = document.querySelector('#button-algo-06');
 const output06 = document.querySelector('#output-algo-06');
 
-function click_function_06(number) {
-    if(!isNaN(parseInt(number))) {
+/**
+ * return output phrase or value depending on user input
+ * @param {*} number 
+ * @returns 
+ */
+function output_function_06(number) {
+
+    intNumber = parseInt(number);
+
+    if(isNaN(intNumber)) {
         return "Please, enter a valid value.";
     }
-    if(parseInt(number) < 2) {
+    if(intNumber < 2) {
         return "Please, enter a valid value.";
     }
-    return parseInt(number);
+    return String(intNumber) + " " + (isPrime(intNumber) ? "is a prime number." : "is not a prime number.");
 }
 
+/**
+ * check if number is prime
+ * @param {*} number 
+ * @returns 
+ */
 function isPrime(number) {
+
     let isPrime = true;
+
     for(let i = 2; i < number; ++i) {
         if(number % i == 0) {
             isPrime = false;
             break;
         }
     }
+
     return isPrime;
 }
 
+/**
+ * handle event when user click on the button
+ * @param {*} event 
+ */
 function btn06_onClick(event) {
+
     event.preventDefault();
-    output06.textContent = click_function_06(input06.value);
+    output06.textContent = output_function_06(input06.value);
+
 }
 
+// when user click on button...
 button06.addEventListener('click', btn06_onClick);
