@@ -406,7 +406,7 @@ const list07 = document.querySelector("#list-algo-07");
 const main07 = document.querySelector("#algo-07");
 
 let userInputNumber;
-let round07 = 50;
+let round07 = 8;
 let scriptMin = 1;
 let scriptMax = 100;
 let randNumber;
@@ -566,3 +566,85 @@ function btn07_onClick(event) {
 
 // when user click on save button...
 button07.addEventListener('click', btn07_onClick);
+
+/***********************************
+ * algo calculatrice
+ ***********************************/
+
+const button_sum = document.querySelector("#button-sum");
+const button_sub = document.querySelector("#button-sub");
+const button_mul = document.querySelector("#button-mul");
+const button_div = document.querySelector("#button-div");
+const button_clear = document.querySelector("#button-clear");
+const inputCalc = document.querySelector("#input-algo-calc");
+const preCalc = document.querySelector("#pre-algo-calc");
+const outputCalc = document.querySelector("#output-algo-calc");
+
+let calcul = 0;
+
+preCalc.textContent = calcul;
+
+function checkOperand() {
+    let bool = inputCalc.value != "" && !isNaN(parseFloat(inputCalc.value));
+    outputCalc.textContent = !bool ? "Please, provide a valid value" : '';
+    inputCalc.focus();
+    return bool;
+}
+
+function checkResult() {
+    return !isNan(calcul);
+}
+
+function clear_onClick(event) {
+    event.preventDefault();
+    calcul = 0;
+    preCalc.textContent = calcul;
+    inputCalc.value = '';
+    inputCalc.focus();
+}
+
+function sum_onClick(event) {
+    event.preventDefault();
+    if(checkOperand()) {
+        calcul += parseFloat(inputCalc.value);
+        preCalc.textContent = calcul;
+        inputCalc.value = '';
+        inputCalc.focus();
+    }
+}
+
+function sub_onClick(event) {
+    event.preventDefault();
+    if(checkOperand()) {
+        calcul -= parseFloat(inputCalc.value);
+        preCalc.textContent = calcul;
+        inputCalc.value = '';
+        inputCalc.focus();
+    }
+}
+
+function mul_onClick(event) {
+    event.preventDefault();
+    if(checkOperand()) {
+        calcul *= parseFloat(inputCalc.value);
+        preCalc.textContent = calcul;
+        inputCalc.value = '';
+        inputCalc.focus();
+    }
+}
+
+function div_onClick(event) {
+    event.preventDefault();
+    if(checkOperand()) {
+        calcul /= parseFloat(inputCalc.value);
+        preCalc.textContent = calcul;
+        inputCalc.value = '';
+        inputCalc.focus();
+    }
+}
+
+button_clear.addEventListener('click', clear_onClick);
+button_sum.addEventListener('click', sum_onClick);
+button_sub.addEventListener('click', sub_onClick);
+button_mul.addEventListener('click', mul_onClick);
+button_div.addEventListener('click', div_onClick);
