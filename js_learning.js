@@ -648,3 +648,130 @@ button_sum.addEventListener('click', sum_onClick);
 button_sub.addEventListener('click', sub_onClick);
 button_mul.addEventListener('click', mul_onClick);
 button_div.addEventListener('click', div_onClick);
+
+/***********************************
+ * algo calculatrice 2
+ ***********************************/
+
+const calcZone = document.querySelector("#calc-matrix");
+
+const button_sum2 = document.querySelector("#sum button");
+const button_sub2 = document.querySelector("#sub button");
+const button_mul2 = document.querySelector("#mul button");
+const button_div2 = document.querySelector("#division button");
+const button_open_p2 = document.querySelector("#open-p button");
+const button_close_p2 = document.querySelector("#close-p button");
+const button_clear2 = document.querySelector("#clear button");
+const button_equal2 = document.querySelector("#equal button");
+const button_zero2 = document.querySelector("#zero button");
+const button_one2 = document.querySelector("#one button");
+const button_two2 = document.querySelector("#two button");
+const button_three2 = document.querySelector("#three button");
+const button_four2 = document.querySelector("#four button");
+const button_five2 = document.querySelector("#five button");
+const button_six2 = document.querySelector("#six button");
+const button_seven2 = document.querySelector("#seven button");
+const button_eight2 = document.querySelector("#eight button");
+const button_nine2 = document.querySelector("#nine button");
+const button_point2 = document.querySelector("#point button");
+
+const outputCalc2 = document.querySelector("#result");
+
+const literalButtons = [
+    button_sum2,
+    button_sub2,
+    button_mul2,
+    button_div2,
+    button_open_p2,
+    button_close_p2,
+    button_zero2,
+    button_one2,
+    button_two2,
+    button_three2,
+    button_four2,
+    button_five2,
+    button_six2,
+    button_seven2,
+    button_eight2,
+    button_nine2,
+    button_point2
+];
+
+let calcul2 = [];
+let result;
+
+/**
+ * update the output div with operation provided by calcul2 array
+ */
+function updateOutput() {
+    outputCalc2.textContent = calcul2.join('');
+}
+
+/**
+ * push button value into calcul2 array
+ * @param {*} event 
+ */
+function literalFunction(event) {
+    calcul2.push(this.value);
+    updateOutput();
+}
+
+/**
+ * empty calcul2 array and update output div
+ * @param {*} event 
+ */
+function clearFunction(event) {
+    calcul2 = [];
+    updateOutput();
+}
+
+/**
+ * when user click on equal button
+ * @param {*} event 
+ */
+function resultFunction(event) {
+
+    try {
+
+        // try to evaluate operation list in calcul2 array
+        eval("result = " + calcul2.join(''));
+
+        // if a division by zero occur...
+        if(!isFinite(result)) {
+            throw new Error('division by zero is not allowed');
+        }
+
+        // when calcul2 have been evaluated, empty calcul2 array.
+        calcul2 = [];
+
+        // output the result in output div if eval suceeded
+        outputCalc2.textContent = result;
+
+    } catch(e) {
+
+        // handling SyntaxError error type
+        if(e instanceof SyntaxError) {
+            outputCalc2.textContent = 'Error : Please provide a valid operation';
+            calcul2 = [];
+        // handling division-by-zero error type
+        } else {
+            outputCalc2.textContent = e;
+            calcul2 = [];
+        }
+
+    }
+
+}
+
+literalButtons.forEach(value => value.addEventListener('click', literalFunction));
+button_clear2.addEventListener('click', clearFunction);
+button_equal2.addEventListener('click', resultFunction);
+
+/**
+ * Working on custom event
+ * there is two field.
+ * event is triggered when first field has a value smaller 10
+ * and the second field has a value greater than 10.
+ * 
+ */
+

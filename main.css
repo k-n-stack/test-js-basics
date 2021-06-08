@@ -1,3 +1,8 @@
+pre {
+    margin: 0px;
+    padding: 0px;
+}
+
 #calc-matrix {
     height: 400px;
     width: 400px;
@@ -7,10 +12,17 @@
         "sev eig nin sum opp"
         "fou fiv six sub clp"
         "one two thr mul cle"
-        "zer zer zer div equ";
+        "zer zer poi div equ";
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 5px;
 }
 
 #result {
+    margin: 0px;
+    padding: 0px;
+    height: 100px;
     border-style: solid;
     border-radius: 3px;
     border-width: 1px;
@@ -80,6 +92,10 @@
     display: flex;
     grid-area: zer;
 }
+#point {
+    display: flex;
+    grid-area: poi;
+}
 #division {
     display: flex;
     grid-area: div;
@@ -105,5 +121,6 @@
 #mul button { flex: auto; }
 #clear button { flex: auto; }
 #zero button { flex: auto; }
+#point button {flex: auto; }
 #division button { flex: auto; }
 #equal button { flex: auto; }
