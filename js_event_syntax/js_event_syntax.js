@@ -753,7 +753,7 @@ function resultFunction(event) {
         if(e instanceof SyntaxError) {
             outputCalc2.textContent = 'Error : Please provide a valid operation';
             calcul2 = [];
-        // handling division-by-zero error type
+        // handling division-by-zero error type or other error type
         } else {
             outputCalc2.textContent = e;
             calcul2 = [];
