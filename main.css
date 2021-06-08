@@ -1,0 +1,109 @@
+#calc-matrix {
+    height: 400px;
+    width: 400px;
+    display: grid;
+    grid-template-areas: 
+        "res res res res res"
+        "sev eig nin sum opp"
+        "fou fiv six sub clp"
+        "one two thr mul cle"
+        "zer zer zer div equ";
+}
+
+#result {
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    grid-area: res;
+}
+#seven {
+    display: flex;
+    grid-area: sev;
+}
+#eight {
+    display: flex;
+    grid-area: eig;
+}
+#nine {
+    display: flex;
+    grid-area: nin;
+}
+#sum {
+    display: flex;
+    grid-area: sum;
+}
+#open-p {
+    display: flex;
+    grid-area: opp;
+}
+#four {
+    display: flex;
+    grid-area: fou;
+}
+#five {
+    display: flex;
+    grid-area: fiv;
+}
+#six {
+    display: flex;
+    grid-area: six;
+}
+#sub {
+    display: flex;
+    grid-area: sub;
+}
+#close-p {
+    display: flex;
+    grid-area: clp;
+}
+#one {
+    display: flex;
+    grid-area: one;
+}
+#two {
+    display: flex;
+    grid-area: two;
+}
+#three {
+    display: flex;
+    grid-area: thr;
+}
+#mul {
+    display: flex;
+    grid-area: mul;
+}
+#clear {
+    display: flex;
+    grid-area: cle;
+}
+#zero {
+    display: flex;
+    grid-area: zer;
+}
+#division {
+    display: flex;
+    grid-area: div;
+}
+#equal {
+    display: flex;
+    grid-area: equ;
+}
+
+#seven button { flex: auto; }
+#eight button { flex: auto; }
+#nine button { flex: auto; }
+#sum button { flex: auto; }
+#open-p button { flex: auto; }
+#four button { flex: auto; }
+#five button { flex: auto; }
+#six button { flex: auto; }
+#sub button { flex: auto; }
+#close-p button { flex: auto; }
+#one button { flex: auto; }
+#two button { flex: auto; }
+#three button { flex: auto; }
+#mul button { flex: auto; }
+#clear button { flex: auto; }
+#zero button { flex: auto; }
+#division button { flex: auto; }
+#equal button { flex: auto; }

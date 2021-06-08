@@ -1,108 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=k, initial-scale=1.0">
-    <title>Document</title>
-    <script src="js_learning.js" defer></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=k, initial-scale=1.0">
+        <title>Document</title>
+        <script src="js_learning.js" defer></script>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="algo-calc-2">
+            <h1>Algo Calculatrice 2</h1>
+            <div>2nd version of JS calc</div>
+            <div id="calc-matrix">
+                <div id="result"></div>
+                <div id="seven"><button>7</button></div>
+                <div id="eight"><button>8</button></div>
+                <div id="nine"><button>9</button></div>
+                <div id="sum"><button>+</button></div>
+                <div id="open-p"><button>(</button></div>
+                <div id="four"><button>4</button></div>
+                <div id="five"><button>5</button></div>
+                <div id="six"><button>6</button></div>
+                <div id="sub"><button>-</button></div>
+                <div id="close-p"><button>)</button></div>
+                <div id="one"><button>1</button></div>
+                <div id="two"><button>2</button></div>
+                <div id="three"><button>3</button></div>
+                <div id="mul"><button>*</button></div>
+                <div id="clear"><button>clear</button></div>
+                <div id="zero"><button>0</button></div>
+                <div id="division"><button>/</button></div>
+                <div id="equal"><button>=</button></div>
+            </div>
+        </div>
+            
+        <div id="algo-01">
+            <h1>Algo 01</h1>
+            <div>I will randomly choose a number between 1 and 100.</div>
+            <div>Try to guess which number, I'll tell you if you're too low or too high.</div>
+            <form action="">
+                <label for="input-algo-01">Enter your number here :</label>
+                <input id="input-algo-01" type="text">
+                <button id="button-algo-01">check</button>
+            </form>
+            <div id="output-algo-01"></div>
+        </div>
 
-    <div id="algo-01">
-        <h1>Algo 01</h1>
-        <div>I will randomly choose a number between 1 and 100.</div>
-        <div>Try to guess which number, I'll tell you if you're too low or too high.</div>
-        <form action="">
-            <label for="input-algo-01">Enter your number here :</label>
-            <input id="input-algo-01" type="text">
-            <button id="button-algo-01">check</button>
-        </form>
-        <div id="output-algo-01"></div>
-    </div>
+        <div id="algo-02">
+            <h1>Algo 02</h1>
+            <div>Please, provide a number between 1 and 100.</div>
+            <div>I'll calculate the sum of all positive integer smaller than you number.</div>
+            <form action="">
+                <label for="input-algo-02">Enter your number here :</label>
+                <input id="input-algo-02" type="text">
+                <button id="button-algo-02">calculate</button>
+            </form>
+            <div id="output-algo-02"></div>
+        </div>
 
-    <div id="algo-02">
-        <h1>Algo 02</h1>
-        <div>Please, provide a number between 1 and 100.</div>
-        <div>I'll calculate the sum of all positive integer smaller than you number.</div>
-        <form action="">
-            <label for="input-algo-02">Enter your number here :</label>
-            <input id="input-algo-02" type="text">
-            <button id="button-algo-02">calculate</button>
-        </form>
-        <div id="output-algo-02"></div>
-    </div>
+        <div id="algo-03">
+            <h1>Algo 03</h1>
+            <div>Please, provide 10 number.</div>
+            <div>After the 10th number is provided I'll show you the highest number</div>
+            <ul id="list-algo-03"></ul>
+            <form action="">
+                <input id="input-algo-03" type="text">
+                <button id="button-algo-03">add</button>
+            </form>
+            <div id="output-algo-03"></div>
+        </div>
 
-    <div id="algo-03">
-        <h1>Algo 03</h1>
-        <div>Please, provide 10 number.</div>
-        <div>After the 10th number is provided I'll show you the highest number</div>
-        <ul id="list-algo-03"></ul>
-        <form action="">
-            <input id="input-algo-03" type="text">
-            <button id="button-algo-03">add</button>
-        </form>
-        <div id="output-algo-03"></div>
-    </div>
+        <div id="algo-04">
+            <h1>Algo 04</h1>
+            <div>Please, provide a list of number.</div>
+            <div>If you put 0, user input stop and I'll sort number list in ascending order</div>
+            <ul id="list-algo-04"></ul>
+            <form action="">
+                <input id="input-algo-04" type="text">
+                <button id="button-algo-04">add</button>
+            </form>
+            <div id="output-algo-04"></div>
+        </div>
 
-    <div id="algo-04">
-        <h1>Algo 04</h1>
-        <div>Please, provide a list of number.</div>
-        <div>If you put 0, user input stop and I'll sort number list in ascending order</div>
-        <ul id="list-algo-04"></ul>
-        <form action="">
-            <input id="input-algo-04" type="text">
-            <button id="button-algo-04">add</button>
-        </form>
-        <div id="output-algo-04"></div>
-    </div>
+        <div>
+            <h1>Algo 05</h1>
+            <div>Please, enter a phrase.</div>
+            <div id="div-algo-05">Depends on the length of the phrase, this div will have a different background-color</div>
+            <form action="">
+                <input id="input-algo-05" type="text">
+            </form>
+        </div>
 
-    <div>
-        <h1>Algo 05</h1>
-        <div>Please, enter a phrase.</div>
-        <div id="div-algo-05">Depends on the length of the phrase, this div will have a different background-color</div>
-        <form action="">
-            <input id="input-algo-05" type="text">
-        </form>
-    </div>
+        <div>
+            <h1>Algo 06</h1>
+            <div>Please, enter a number greater than 1.</div>
+            <div>I will tell you if this number is prime or not.</div>
+            <form action="">
+                <input id="input-algo-06" type="text">
+                <button id="button-algo-06">is it prime ?</button>
+            </form>
+            <div id="output-algo-06"></div>
+        </div>
 
-    <div>
-        <h1>Algo 06</h1>
-        <div>Please, enter a number greater than 1.</div>
-        <div>I will tell you if this number is prime or not.</div>
-        <form action="">
-            <input id="input-algo-06" type="text">
-            <button id="button-algo-06">is it prime ?</button>
-        </form>
-        <div id="output-algo-06"></div>
-    </div>
+        <div id="algo-07">
+            <h1>Algo 07</h1>
+            <div>Please, enter a number between 1 and 100.</div>
+            <div>I have 8 round to guess your number.</div>
+            <div>On each round I give you a number, you have to tell me if it's too high or too low.</div>
+            <form id="form-algo-07" action="">
+                <input id="input-algo-07" type="text">
+                <button id="button-algo-07">save number</button>
+            </form>
+            <div id="output-algo-07"></div>
+            <ul id="list-algo-07"></ul>
+        </div>
 
-    <div id="algo-07">
-        <h1>Algo 07</h1>
-        <div>Please, enter a number between 1 and 100.</div>
-        <div>I have 8 round to guess your number.</div>
-        <div>On each round I give you a number, you have to tell me if it's too high or too low.</div>
-        <form id="form-algo-07" action="">
-            <input id="input-algo-07" type="text">
-            <button id="button-algo-07">save number</button>
-        </form>
-        <div id="output-algo-07"></div>
-        <ul id="list-algo-07"></ul>
-    </div>
+        <div id="algo-calc">
+            <h1>Algo Calculatrice</h1>
+            <div>This is a JS calc.</div>
+            <pre id="pre-algo-calc"></pre>
+            <form id="form-algo-calc" action="">
+                <input id="input-algo-calc" type="text">
+                <button id="button-sum">+</button>
+                <button id="button-sub">-</button>
+                <button id="button-mul">*</button>
+                <button id="button-div">/</button>
+                <button id="button-clear">clear</button>
+            </form>
+            <div id="output-algo-calc"></div>
+        </div>
 
-    <div id="algo-calc">
-        <h1>Algo Calculatrice</h1>
-        <div>This is a JS calc.</div>
-        <pre id="pre-algo-calc"></pre>
-        <form id="form-algo-calc" action="">
-            <input id="input-algo-calc" type="text">
-            <button id="button-sum">+</button>
-            <button id="button-sub">-</button>
-            <button id="button-mul">*</button>
-            <button id="button-div">/</button>
-            <button id="button-clear">clear</button>
-        </form>
-        <div id="output-algo-calc"></div>
-    </div>
 </body>
 </html>
