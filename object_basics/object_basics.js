@@ -110,3 +110,100 @@ console.log(obj2.age);
 
 let obj3 = Object.create(obj2);
 console.log(obj3.name);
+
+/**
+ * accessing object prototype
+ */
+
+let person6 = new Person('ross');
+proto6 = Object.getPrototypeOf(person6);
+proto6_2 = Object.getPrototypeOf(proto6);
+console.log(proto6);
+console.log(proto6_2);
+
+/**
+ * check existing prototype properties
+ */
+
+console.log(Person.prototype);
+console.log(Object.prototype);
+
+console.log(new String());
+console.log(new Date());
+console.log(new Number());
+console.log(new Array());
+
+/**
+ * create object using create() from a specified proto object
+ */
+
+let person7 = Object.create(person6);
+console.log(person7.__proto__); // return person6 object
+
+/**
+ * constructor property
+ */
+
+console.log(person6.constructor);
+console.log(person7.constructor);
+
+/**
+ * create object instance from object.constructor() function
+ */
+
+let person8 = new person7.constructor('Mike');
+console.log(person8);
+
+/**
+ * return name of the constructor
+ */
+
+console.log(person8.constructor.name);
+
+/**
+ * Modifying prototype
+ * add method to prototype
+ */
+
+let person9 = new Person('Robert');
+person9.greeting();
+console.log(person9);
+
+Person.prototype.farewell = function () {
+    alert(`My name is ${this.name}, Goodbye`);
+};
+
+person9.farewell();
+
+Person.prototype.farewell();
+
+/**
+ * Modify prototype
+ * delete method in prototype
+ */
+
+delete Person.prototype.farewell; // deleting farewell method in proto
+// person9.farewell(); // generate error "person9.farewell is not a function"
+
+/**
+ * Modifying prototype
+ * update method in prototype
+ */
+
+/**
+ * Prototype : common pattern of object definition
+ */
+
+function Voiture(annee, couleur, marque) {
+    this.annee = annee;
+    this.couleur = couleur;
+    this.marque = marque;
+
+    Voiture.prototype.getAnnee = () => { return this.annee; };
+    Voiture.prototype.getCouleur = () => { return this.couleur; };
+    Voiture.prototype.getMarque = () => { return this.marque; };
+}
+
+let test_voiture = new Voiture(1999, 'bleue', 'renault');
+
+console.log(test_voiture.getCouleur());
